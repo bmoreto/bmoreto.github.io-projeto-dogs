@@ -8,7 +8,6 @@ const useFetch = () => {
   const request = React.useCallback(async (url, options) => {
     let response;
     let json;
-
     try {
       setError(null);
       setLoading(true);
@@ -25,7 +24,12 @@ const useFetch = () => {
     }
   }, []);
 
-  return { data, loading, error, request };
+  return {
+    data,
+    loading,
+    error,
+    request,
+  };
 };
 
 export default useFetch;
