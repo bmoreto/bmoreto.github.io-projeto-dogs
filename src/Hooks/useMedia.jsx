@@ -11,9 +11,10 @@ const useMedia = (media) => {
     changeMatch();
     window.addEventListener('resize', changeMatch);
     return () => {
-      window.addEventListener('resize', changeMatch);
+      window.removeEventListener('resize', changeMatch);
     };
   }, [media]);
+
   return match;
 };
 
